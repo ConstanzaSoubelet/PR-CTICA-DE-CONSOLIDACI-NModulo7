@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>Eliminar Laboratorio</h1>
+    <p>¿Estás seguro de que deseas eliminar el laboratorio "{{ object.nombre }}"?</p>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <!-- Enlace "Retornar" arriba del botón -->
+        <a href="{% url 'laboratorio:laboratorio_list' %}" class="btn btn-secondary mb-3">Retornar</a>
+
+        <!-- Botón "Eliminar" -->
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+    </form>
+</div>
+{% endblock %}

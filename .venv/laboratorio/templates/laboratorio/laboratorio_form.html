@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% if object %}Editar Laboratorio{% else %}Nuevo Laboratorio{% endif %}</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar</button>
+</form>
+
+<!-- Información adicional fuera de la tabla -->
+<p>¿Información de laboratorios?</p>
+<a href="{% url 'laboratorio:laboratorio_list' %}">Ir a información de laboratorios</a>
+{% endblock %}
